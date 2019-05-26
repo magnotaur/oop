@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace Oop
 {
-    class HorizontalLine : Figure
+    class VerticalLine : Figure
     {
-     
-        public HorizontalLine(int xLeft, int xReight, int y, char sym)
+        public VerticalLine(int yUp, int yDown, int x, char sym)
         {
             pList = new List<Point>();
-            for (int x = xLeft; x <= xReight; x++)
+            for (int y = yUp; y <= yDown; y++)
             {
                 Point p = new Point(x, y, sym);
                 pList.Add(p);
             }
-            
+
         }
     }
 }
