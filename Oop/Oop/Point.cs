@@ -23,10 +23,41 @@ namespace Oop
             sym = _sym;
         }
 
+        public Point(Point p)  //конструктор для задания точки с помощью другой точки
+        {
+            x = p.x;
+            y = p.y;
+            sym = p.sym;
+        }
+
+        public void Move(int offset, Direction direction)   //метод мув, который сдвигает данную точку на расстояние offset по направлению direction
+        {
+            if(direction == Direction.RIGHT)   //если вправо, то расстояние увеличится на расстояние offset, влево - наоборот
+            {
+                x = x + offset;
+            }
+            else if(direction == Direction.LEFT)
+            {
+                x = x - offset;
+            }
+            else if (direction == Direction.UP)
+            {
+                y = y + offset;
+            }
+            else if (direction == Direction.DOWN)
+            {
+                y = y - offset;
+            }
+        }
         public void Draw()
         {
             Console.SetCursorPosition(x, y);   //вывод на экран
             Console.Write(sym);
+        }
+
+        public override string ToString()
+        {
+            return x + ", " + y + ", " + sym;
         }
     }
 }
