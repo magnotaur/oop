@@ -51,5 +51,18 @@ namespace Oop
             else if (key == ConsoleKey.UpArrow)
                 direction = Direction.UP;
         }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))       //если голова змейки находится в том же месте что и точка то змейка ее съест
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }
