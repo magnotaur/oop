@@ -34,21 +34,17 @@ namespace Oop
             Snake snake = new Snake( p, 4, Direction.RIGHT);
             snake.Drow();
             snake.Move();   //метод с помощью которого змейка будет двигаься
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
+
+            while(true) //бесконечный цикл, который означает что код внутри скобочек будет выполняться вечно
+            {
+                if(Console.KeyAvailable)    //1. проверка на то, была ли нажата какая-либо клавиша с прошлого витка цикла
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(); //2. получаем значение этой клавиши
+                    snake.Handlkey(key.Key);
+                }
+                Thread.Sleep(100);  //4. после определения направления змейки, идет задержка на 100 милисекунд
+                snake.Move();       //5. происходит смещение змейки
+            }
 
             /* List<int> numList = new list<int>();
              numList.Add(0);
