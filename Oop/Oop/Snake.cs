@@ -21,7 +21,7 @@ namespace Oop
             }
         }
 
-        internal void Move()
+        internal void Move()    //метод Move
         {
             Point tail = pList.First();
             pList.Remove(tail);
@@ -52,7 +52,7 @@ namespace Oop
                 direction = Direction.UP;
         }
 
-        internal bool Eat(Point food)
+        internal bool Eat(Point food)   //метод Eat
         {
             Point head = GetNextPoint();
             if (head.IsHit(food))       //если голова змейки находится в том же месте что и точка то змейка ее съест

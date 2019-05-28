@@ -9,7 +9,7 @@ namespace Oop
     class Figure
     {
         protected List<Point> pList;
-        public void Drow()
+        public virtual void Draw()  //любой наследник этого метода благодаря virtual может написать свою реализацию
         {
             foreach (Point p in pList)
             {

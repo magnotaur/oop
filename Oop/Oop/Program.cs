@@ -11,13 +11,39 @@ namespace Oop
     {
         static void Main(string[] args)
         {
-            /* Point p1 = new Point(1, 3, '+');
-             p1.Draw();
+            VerticalLine v1 = new VerticalLine(0, 10, 5, '%');
+            Draw(v1);
 
-             Point p2 = new Point(4, 5, '#');
-             p2.Draw(); */
+            Point p = new Point(4, 5, '+');     //создание точки
+            Figure fSnake = new Snake(p, 4, Direction.RIGHT);   //создание змейки
+            Draw(fSnake);
+            Snake snake = (Snake) fSnake;
 
-            Console.SetBufferSize(80, 25);
+            HorizontalLine h1 = new HorizontalLine(0, 5, 6, '&');
+
+            List<Figure> figures = new List<Figure>();  //список фигур
+            figures.Add(fSnake);
+            figures.Add(v1);
+            figures.Add(h1);
+
+            foreach (var f in figures)  //у всех наследников класса фигуры есть метод Draw
+            {
+                f.Draw();
+            }
+            Console.ReadLine();
+        }
+
+        static void Draw(Figure figure)
+        {
+            figure.Draw();
+
+        }
+        
+    }
+    
+}
+
+           /* Console.SetBufferSize(80, 25);
 
             //Отрисовка рамочки
             HorizontalLine upline = new HorizontalLine(0, 78, 0, '+');
@@ -59,32 +85,8 @@ namespace Oop
                     snake.Handlkey(key.Key);
                 }
             }
-                /*
-                Thread.Sleep(100);  //4. после определения направления змейки, идет задержка на 100 милисекунд
-                snake.Move();       //5. происходит смещение змейки
             
-
-            /* List<int> numList = new list<int>();
-             numList.Add(0);
-             numList.Add(1);
-             numList.Add(2);
-
-             int x = numList[0];
-             int y = numList[1];
-             int z = numList[2];
-
-             foreach (int i in numList)
-             {
-                 Console.WriteLine(i);
-             }
-
-             numList.Remove(0);
-
-             List<Point> pList = new List<Point>();
-             pList.Add(p1);
-             pList.Add(p2); */
-
             Console.ReadLine(); 
         }
     }
-}
+}*/
