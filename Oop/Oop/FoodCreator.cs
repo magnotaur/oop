@@ -21,7 +21,7 @@ namespace Oop
             this.sym = sym;
         }
 
-        public Point CreatFood()
+        public Point CreateFood()
         {
             int x = random.Next(2, mapWidht - 2);
             int y = random.Next(2, mapHeight - 2);

@@ -8,7 +8,6 @@ namespace Oop
 {
     class HorizontalLine : Figure
     {
-     
         public HorizontalLine(int xLeft, int xReight, int y, char sym)
         {
             pList = new List<Point>();
@@ -18,6 +17,14 @@ namespace Oop
                 pList.Add(p);
             }
             
+        }
+
+        public override void Draw() //альтернативная реализация метода Draw благодаря virtual
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            base.Draw();
+
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
